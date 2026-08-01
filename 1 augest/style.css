@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: black;
+    color: white;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SIDE TEXT */
+.left {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+/* RIGHT SIDE */
+.right {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* SCROLL AREA */
+.scroll {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scrollUp 20s linear infinite;
+}
+
+/* IMAGE + VIDEO SIZE FIX */
+.scroll img,
+.scroll video {
+    width: 90%;              /* 👈 thoda margin look */
+    max-width: 400px;
+    height: 250px;           /* 👈 FIX HEIGHT */
+    object-fit: contain;     /* 👈 NO CROP 🔥 */
+    margin: 10px 0;
+    border-radius: 10px;
+    background: black;
+}
+
+/* ANIMATION */
+@keyframes scrollUp {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
